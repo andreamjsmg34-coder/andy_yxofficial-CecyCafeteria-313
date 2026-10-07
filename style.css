@@ -1,0 +1,897 @@
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f5;
+    color: #26332c;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* =====================================
+   PANTALLAS
+===================================== */
+
+.pantalla {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+/* =====================================
+   INICIO DE SESIÓN
+===================================== */
+
+#pantallaLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #dff3e6, #f8faf8);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border-top: 5px solid #176b45;
+}
+
+.login-container h1 {
+    margin-bottom: 10px;
+    font-size: 34px;
+    color: #176b45;
+}
+
+.login-container > p {
+    color: #68736d;
+    margin-bottom: 28px;
+}
+
+#formLogin {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#formLogin label {
+    margin: 12px 0 6px;
+    font-weight: bold;
+    color: #26332c;
+}
+
+#formLogin input {
+    padding: 13px;
+    border: 1px solid #cbd5cf;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+#formLogin input:focus {
+    border-color: #176b45;
+    box-shadow: 0 0 0 3px rgba(23, 107, 69, 0.10);
+}
+
+#formLogin button {
+    margin-top: 22px;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    background: #176b45;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#formLogin button:hover {
+    background: #125737;
+    transform: translateY(-2px);
+}
+
+.texto-pequeno {
+    font-size: 14px;
+    margin-top: 22px;
+}
+
+.texto-pequeno button {
+    background: none;
+    border: none;
+    color: #176b45;
+    font-weight: bold;
+}
+
+.texto-pequeno button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   ENCABEZADOS
+===================================== */
+
+.encabezado {
+    background: linear-gradient(135deg, #176b45, #23845a);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(23, 107, 69, 0.18);
+}
+
+.encabezado h1 {
+    margin: 5px 0 8px;
+    font-size: 34px;
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: 17px;
+    opacity: 0.95;
+}
+
+
+/* =====================================
+   INICIO
+===================================== */
+
+.inicio-contenido {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.inicio-contenido h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #176b45;
+}
+
+.inicio-contenido > p {
+    color: #68736d;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 650px;
+    margin: 35px auto;
+}
+
+.opciones button {
+    min-height: 90px;
+    border: none;
+    border-radius: 18px;
+    background: white;
+    color: #26332c;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    transition: 0.2s ease;
+}
+
+.opciones button:hover {
+    transform: translateY(-4px);
+    color: #176b45;
+    box-shadow: 0 10px 25px rgba(23, 107, 69, 0.16);
+}
+
+.boton-salir {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: #5d6962;
+    color: white;
+}
+
+.boton-salir:hover {
+    background: #465049;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   BOTONES GENERALES
+===================================== */
+
+.boton-volver {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    border: none;
+    border-radius: 9px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    font-weight: bold;
+}
+
+.boton-volver:hover {
+    background: rgba(255, 255, 255, 0.30);
+    transform: translateX(-2px);
+}
+
+
+/* =====================================
+   MENÚ PRINCIPAL
+===================================== */
+
+/*
+   Aquí aparecen las categorías:
+   Hamburguesas, Tacos, Pizza, etc.
+*/
+
+.menu {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =====================================
+   TARJETAS DE CATEGORÍAS
+===================================== */
+
+.categoria {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+    text-align: center;
+    padding: 30px 20px;
+    transition: 0.25s ease;
+    border: 1px solid #e4ebe6;
+}
+
+.categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(23, 107, 69, 0.17);
+    border-color: #b9d8c6;
+}
+
+.categoria h2,
+.categoria h3 {
+    color: #176b45;
+    margin: 12px 0;
+}
+
+.categoria p {
+    color: #69736e;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.categoria-icono {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #dff3e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.categoria button {
+    margin-top: 12px;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: #176b45;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.categoria button:hover {
+    background: #125737;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   SUBMENÚ / TIPOS DE PRODUCTOS
+===================================== */
+
+.submenu {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =====================================
+   PRODUCTOS
+===================================== */
+
+.producto {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    padding-bottom: 22px;
+    transition: 0.25s ease;
+    border: 1px solid #e4ebe6;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 27px rgba(23, 107, 69, 0.16);
+    border-color: #b9d8c6;
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 180px;
+    background: #e7eee9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.producto:hover .imagen-producto img {
+    transform: scale(1.04);
+}
+
+.producto h3 {
+    font-size: 21px;
+    margin: 18px 10px 8px;
+    color: #26332c;
+}
+
+.descripcion {
+    color: #69736e;
+    font-size: 14px;
+    min-height: 40px;
+    padding: 0 15px;
+    line-height: 1.4;
+}
+
+.precio {
+    font-size: 23px;
+    font-weight: bold;
+    color: #176b45;
+    margin: 15px 0;
+}
+
+.producto button,
+.boton-pedido button,
+.confirmacion button,
+.ticket-final button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #176b45;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.producto button:hover,
+.boton-pedido button:hover,
+.confirmacion button:hover,
+.ticket-final button:hover {
+    background: #125737;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   BOTÓN VER PEDIDO
+===================================== */
+
+.boton-pedido {
+    text-align: center;
+    margin: 10px 0 40px;
+}
+
+.boton-pedido button {
+    font-size: 17px;
+    padding: 14px 30px;
+    box-shadow: 0 5px 15px rgba(23, 107, 69, 0.15);
+}
+
+
+/* =====================================
+   MI PEDIDO
+===================================== */
+
+.pedido-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.ticket {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.10);
+}
+
+.ticket h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #176b45;
+}
+
+.producto-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e1e5e2;
+}
+
+.producto-pedido-info {
+    text-align: left;
+}
+
+.producto-pedido-info strong {
+    display: block;
+}
+
+.producto-pedido-info span {
+    color: #69736e;
+    font-size: 14px;
+}
+
+.producto-pedido button {
+    border: none;
+    border-radius: 7px;
+    padding: 7px 10px;
+    background: #b33b3b;
+    color: white;
+}
+
+.producto-pedido button:hover {
+    background: #922f2f;
+}
+
+.separador {
+    height: 1px;
+    background: #dfe5e1;
+    margin: 20px 0;
+}
+
+.total {
+    text-align: right;
+    font-size: 24px;
+    color: #176b45;
+}
+
+.boton-confirmar {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    background: #176b45;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.boton-confirmar:hover {
+    background: #125737;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   PANTALLA PREPARANDO
+===================================== */
+
+.confirmacion {
+    width: 90%;
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.icono-exito {
+    font-size: 65px;
+}
+
+.confirmacion h1 {
+    color: #176b45;
+}
+
+.detalle-pedido {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: #f1f6f2;
+    text-align: left;
+}
+
+.detalle-pedido h2 {
+    text-align: center;
+    color: #176b45;
+}
+
+.detalle-pedido p {
+    margin: 10px 0;
+}
+
+
+/* =====================================
+   BARRA DE PROGRESO
+===================================== */
+
+.barra-progreso {
+    width: 100%;
+    height: 18px;
+    background: #dfe8e2;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 25px 0 12px;
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+    background: #176b45;
+    border-radius: 20px;
+    transition: width 5s linear;
+}
+
+.texto-progreso {
+    text-align: center;
+    color: #68736d;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   BOTÓN CONTINUAR
+===================================== */
+
+.boton-continuar {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    background: #176b45;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.boton-continuar:disabled {
+    background: #aab5ae;
+    cursor: not-allowed;
+}
+
+.boton-continuar:not(:disabled):hover {
+    background: #125737;
+}
+
+
+/* =====================================
+   TICKET FINAL
+===================================== */
+
+.ticket-final-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 45px auto;
+    padding: 15px;
+}
+
+.ticket-final {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    position: relative;
+}
+
+.ticket-final::before,
+.ticket-final::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 7px,
+        #f4f7f5 7px,
+        #f4f7f5 14px
+    );
+}
+
+.ticket-final::before {
+    top: 0;
+}
+
+.ticket-final::after {
+    bottom: 0;
+}
+
+.ticket-final h1 {
+    text-align: center;
+    color: #176b45;
+    margin-top: 5px;
+}
+
+.ticket-logo {
+    text-align: center;
+    font-size: 40px;
+}
+
+.ticket-datos {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.ticket-datos div {
+    flex: 1;
+}
+
+.ticket-productos {
+    border-top: 1px dashed #999;
+    border-bottom: 1px dashed #999;
+    padding: 15px 0;
+}
+
+.ticket-producto {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.ticket-total {
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+    color: #176b45;
+    margin: 20px 0;
+}
+
+.estado-pago {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: #dff3e6;
+    color: #176b45;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.ticket-gracias {
+    text-align: center;
+    color: #68736d;
+    font-size: 14px;
+}
+
+.ticket-final button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* =====================================
+   PEDIDOS E HISTORIAL
+===================================== */
+
+.lista-pedidos {
+    max-width: 750px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.tarjeta-pedido {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+    border-left: 5px solid #176b45;
+}
+
+.tarjeta-pedido h3 {
+    margin-top: 0;
+    color: #176b45;
+}
+
+.estado {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #dff3e6;
+    color: #176b45;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   EFECTO PARA CATEGORÍAS
+===================================== */
+
+.categoria,
+.producto {
+    position: relative;
+}
+
+.categoria::before,
+.producto::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #176b45;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .menu,
+    .submenu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .menu,
+    .submenu {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .login-container {
+        padding: 28px 22px;
+    }
+
+    .encabezado {
+        padding: 25px 15px;
+    }
+
+    .encabezado h1 {
+        font-size: 27px;
+    }
+
+    .encabezado p {
+        font-size: 15px;
+    }
+
+    .boton-volver {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .producto-pedido {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .confirmacion {
+        padding: 25px 20px;
+        margin: 30px auto;
+    }
+
+    .ticket-datos {
+        flex-direction: column;
+    }
+
+    .ticket-final {
+        padding: 25px 20px;
+    }
+
+    .categoria {
+        padding: 25px 18px;
+    }
+
+    .categoria-icono {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+}
+
+
+/* =====================================
+   IMPRESIÓN DEL TICKET
+===================================== */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .ticket-final,
+    .ticket-final * {
+        visibility: visible;
+    }
+
+    .ticket-final {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .ticket-final button {
+        display: none;
+    }
+}

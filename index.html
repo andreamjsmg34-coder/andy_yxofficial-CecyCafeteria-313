@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CecyCafetería</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- 1. INICIO DE SESIÓN -->
+<!-- ========================= -->
+
+<section
+    id="pantallaLogin"
+    class="pantalla"
+>
+
+    <div class="login-container">
+
+        <h1>☕ CecyCafetería</h1>
+
+        <p>
+            Inicia sesión para realizar tu pedido
+        </p>
+
+        <form id="formLogin">
+
+            <label for="correo">
+                Correo electrónico
+            </label>
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="ejemplo@correo.com"
+                required
+            >
+
+            <label for="contrasena">
+                Contraseña
+            </label>
+
+            <input
+                type="password"
+                id="contrasena"
+                placeholder="Escribe tu contraseña"
+                required
+            >
+
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <p class="texto-pequeno">
+
+            ¿No tienes una cuenta?
+
+            <button
+                type="button"
+                onclick="crearCuenta()"
+            >
+                Crear cuenta
+            </button>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 2. INICIO -->
+<!-- ========================= -->
+
+<section
+    id="pantallaInicio"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <h1>☕ CecyCafetería</h1>
+
+        <p>
+            Bienvenido a nuestra cafetería escolar
+        </p>
+
+    </header>
+
+
+    <main class="inicio-contenido">
+
+        <h2>
+            ¿A dónde vamos?
+        </h2>
+
+        <p>
+            Selecciona una opción para continuar
+        </p>
+
+
+        <div class="opciones">
+
+            <button
+                onclick="mostrarPantalla('pantallaMenu')"
+            >
+                🍔 Ir al menú
+            </button>
+
+
+            <button
+                onclick="mostrarPantalla('pantallaPedido')"
+            >
+                🛒 Mi pedido
+            </button>
+
+
+            <button
+                onclick="mostrarPedidos()"
+            >
+                📋 Mis pedidos
+            </button>
+
+
+            <button
+                onclick="mostrarHistorial()"
+            >
+                📜 Historial
+            </button>
+
+        </div>
+
+
+        <button
+            class="boton-salir"
+            onclick="cerrarSesion()"
+        >
+            🚪 Cerrar sesión
+        </button>
+
+    </main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 3. MENÚ -->
+<!-- ========================= -->
+
+<section
+    id="pantallaMenu"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <button
+            class="boton-volver"
+            onclick="mostrarPantalla('pantallaInicio')"
+        >
+            ← Volver
+        </button>
+
+
+        <h1>
+            🍔 Nuestro menú
+        </h1>
+
+
+        <p>
+            Elige los productos que deseas ordenar
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <div class="menu">
+
+
+            <!-- ========================= -->
+            <!-- HAMBURGUESAS -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/hamburguesa.jpg"
+                        alt="Hamburguesa"
+                    >
+
+                </div>
+
+                <h3>
+                    🍔 Hamburguesa
+                </h3>
+
+                <p class="descripcion">
+                    Hamburguesa preparada para disfrutar
+                    en nuestra cafetería.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Hamburguesa', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SÁNDWICH -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/sandwich.jpg"
+                        alt="Sándwich"
+                    >
+
+                </div>
+
+                <h3>
+                    🥪 Sándwich
+                </h3>
+
+                <p class="descripcion">
+                    Sándwich preparado para una comida
+                    rápida y práctica.
+                </p>
+
+                <p class="precio">
+                    $25
+                </p>
+
+                <button
+                    onclick="agregarProducto('Sándwich', 25)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- TORTAS -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/torta-jamon.jpg"
+                        alt="Torta de jamón"
+                    >
+
+                </div>
+
+                <h3>
+                    🥪 Torta de jamón
+                </h3>
+
+                <p class="descripcion">
+                    Torta preparada con jamón.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Torta de jamón', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/torta-pierna.jpg"
+                        alt="Torta de pierna"
+                    >
+
+                </div>
+
+                <h3>
+                    🥪 Torta de pierna
+                </h3>
+
+                <p class="descripcion">
+                    Torta preparada con pierna.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Torta de pierna', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/torta-milanesa.jpg"
+                        alt="Torta de milanesa"
+                    >
+
+                </div>
+
+                <h3>
+                    🥪 Torta de milanesa
+                </h3>
+
+                <p class="descripcion">
+                    Torta preparada con milanesa.
+                </p>
+
+                <p class="precio">
+                    $40
+                </p>
+
+                <button
+                    onclick="agregarProducto('Torta de milanesa', 40)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/torta-pollo.jpg"
+                        alt="Torta de pollo"
+                    >
+
+                </div>
+
+                <h3>
+                    🥪 Torta de pollo
+                </h3>
+
+                <p class="descripcion">
+                    Torta preparada con pollo.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Torta de pollo', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- TACOS -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/tacos-bistec.jpg"
+                        alt="Tacos de bistec"
+                    >
+
+                </div>
+
+                <h3>
+                    🌮 Tacos de bistec
+                </h3>
+
+                <p class="descripcion">
+                    Tacos de bistec preparados para disfrutar.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Tacos de bistec', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/tacos-pollo.jpg"
+                        alt="Tacos de pollo"
+                    >
+
+                </div>
+
+                <h3>
+                    🌮 Tacos de pollo
+                </h3>
+
+                <p class="descripcion">
+                    Tacos de pollo preparados para disfrutar.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Tacos de pollo', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/tacos-pastor.jpg"
+                        alt="Tacos al pastor"
+                    >
+
+                </div>
+
+                <h3>
+                    🌮 Tacos al pastor
+                </h3>
+
+                <p class="descripcion">
+                    Tacos al pastor preparados para disfrutar.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Tacos al pastor', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/tacos-chorizo.jpg"
+                        alt="Tacos de chorizo"
+                    >
+
+                </div>
+
+                <h3>
+                    🌮 Tacos de chorizo
+                </h3>
+
+                <p class="descripcion">
+                    Tacos de chorizo preparados para disfrutar.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Tacos de chorizo', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- QUESADILLAS -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/quesadilla-queso.jpg"
+                        alt="Quesadilla de queso"
+                    >
+
+                </div>
+
+                <h3>
+                    🧀 Quesadilla de queso
+                </h3>
+
+                <p class="descripcion">
+                    Quesadilla preparada con queso.
+                </p>
+
+                <p class="precio">
+                    $25
+                </p>
+
+                <button
+                    onclick="agregarProducto('Quesadilla de queso', 25)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/quesadilla-pollo.jpg"
+                        alt="Quesadilla de pollo"
+                    >
+
+                </div>
+
+                <h3>
+                    🧀 Quesadilla de pollo
+                </h3>
+
+                <p class="descripcion">
+                    Quesadilla preparada con pollo.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Quesadilla de pollo', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/quesadilla-champinones.jpg"
+                        alt="Quesadilla de champiñones"
+                    >
+
+                </div>
+
+                <h3>
+                    🧀 Quesadilla de champiñones
+                </h3>
+
+                <p class="descripcion">
+                    Quesadilla preparada con champiñones.
+                </p>
+
+                <p class="precio">
+                    $28
+                </p>
+
+                <button
+                    onclick="agregarProducto('Quesadilla de champiñones', 28)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/quesadilla-chorizo.jpg"
+                        alt="Quesadilla de chorizo"
+                    >
+
+                </div>
+
+                <h3>
+                    🧀 Quesadilla de chorizo
+                </h3>
+
+                <p class="descripcion">
+                    Quesadilla preparada con chorizo.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Quesadilla de chorizo', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- PIZZA -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/pizza-pepperoni.jpg"
+                        alt="Pizza de pepperoni"
+                    >
+
+                </div>
+
+                <h3>
+                    🍕 Pizza de pepperoni
+                </h3>
+
+                <p class="descripcion">
+                    Porción de pizza con pepperoni.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Pizza de pepperoni', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/pizza-jamon.jpg"
+                        alt="Pizza de jamón"
+                    >
+
+                </div>
+
+                <h3>
+                    🍕 Pizza de jamón
+                </h3>
+
+                <p class="descripcion">
+                    Porción de pizza con jamón.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Pizza de jamón', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/pizza-hawaiana.jpg"
+                        alt="Pizza hawaiana"
+                    >
+
+                </div>
+
+                <h3>
+                    🍕 Pizza hawaiana
+                </h3>
+
+                <p class="descripcion">
+                    Porción de pizza hawaiana.
+                </p>
+
+                <p class="precio">
+                    $35
+                </p>
+
+                <button
+                    onclick="agregarProducto('Pizza hawaiana', 35)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/pizza-queso.jpg"
+                        alt="Pizza de queso"
+                    >
+
+                </div>
+
+                <h3>
+                    🍕 Pizza de queso
+                </h3>
+
+                <p class="descripcion">
+                    Porción de pizza con queso.
+                </p>
+
+                <p class="precio">
+                    $25
+                </p>
+
+                <button
+                    onclick="agregarProducto('Pizza de queso', 25)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- PAPAS Y SABRITAS -->
+            <!-- ========================= -->
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/papas-clasicas.jpg"
+                        alt="Papas clásicas"
+                    >
+
+                </div>
+
+                <h3>
+                    🍟 Papas clásicas
+                </h3>
+
+                <p class="descripcion">
+                    Papas crujientes para acompañar tu comida.
+                </p>
+
+                <p class="precio">
+                    $25
+                </p>
+
+                <button
+                    onclick="agregarProducto('Papas clásicas', 25)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/papas-queso.jpg"
+                        alt="Papas con queso"
+                    >
+
+                </div>
+
+                <h3>
+                    🍟 Papas con queso
+                </h3>
+
+                <p class="descripcion">
+                    Papas acompañadas con queso.
+                </p>
+
+                <p class="precio">
+                    $30
+                </p>
+
+                <button
+                    onclick="agregarProducto('Papas con queso', 30)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/papas-salsa.jpg"
+                        alt="Papas con salsa"
+                    >
+
+                </div>
+
+                <h3>
+                    🍟 Papas con salsa
+                </h3>
+
+                <p class="descripcion">
+                    Papas acompañadas con salsa.
+                </p>
+
+                <p class="precio">
+                    $28
+                </p>
+
+                <button
+                    onclick="agregarProducto('Papas con salsa', 28)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+
+            <div class="producto">
+
+                <div class="imagen-producto">
+
+                    <img
+                        src="img/sabritas.jpg"
+                        alt="Sabritas"
+                    >
+
+                </div>
+
+                <h3>
+                    🍟 Sabritas
+                </h3>
+
+                <p class="descripcion">
+                    Sabrita.
+                </p>
+
+                <p class="precio">
+                    $18
+                </p>
+
+                <button
+                    type="button"
+                    onclick="agregarProducto('Sabritas', 18)"
+                >
+                    Agregar al pedido
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="boton-pedido">
+
+            <button
+                type="button"
+                onclick="mostrarPantalla('pantallaPedido')"
+            >
+                🛒 Ver mi pedido
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 4. MI PEDIDO -->
+<!-- ========================= -->
+
+<section
+    id="pantallaPedido"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <button
+            type="button"
+            class="boton-volver"
+            onclick="mostrarPantalla('pantallaMenu')"
+        >
+            ← Volver al menú
+        </button>
+
+        <h1>🛒 Mi pedido</h1>
+
+        <p>Revisa los productos antes de confirmar</p>
+
+    </header>
+
+    <main class="pedido-container">
+
+        <div class="ticket">
+
+            <h2>Resumen del pedido</h2>
+
+            <div id="listaPedido">
+                <p>Aún no has agregado productos.</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <p class="total">
+                Total: $<span id="total">0</span>
+            </p>
+
+            <button
+                type="button"
+                class="boton-confirmar"
+                onclick="confirmarPedido()"
+            >
+                Confirmar pedido
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 5. CONFIRMACIÓN -->
+<!-- ========================= -->
+
+<section
+    id="pantallaConfirmacion"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <h1>Estado de tu pedido</h1>
+
+        <p>Pedido #<span id="numeroPedido">000</span></p>
+
+    </header>
+
+    <main class="confirmacion">
+
+        <div
+            id="iconoEstado"
+            class="icono-exito"
+        >
+            🟡
+        </div>
+
+        <h1 id="tituloEstado">¡Pedido recibido!</h1>
+
+        <p id="mensajeEstado">
+            Tu pedido está siendo preparado.
+        </p>
+
+        <div class="detalle-pedido">
+
+            <h2>Resumen del pedido</h2>
+
+            <div id="resumenPreparacion"></div>
+
+            <p class="total">
+                Total: $<span id="totalPreparacion">0</span>
+            </p>
+
+        </div>
+
+        <div id="estadoPreparando">
+
+            <div class="barra-progreso">
+                <div
+                    id="barraProgreso"
+                    class="progreso"
+                ></div>
+            </div>
+
+            <p class="texto-progreso">
+                Estamos preparando tu pedido.
+            </p>
+
+        </div>
+
+        <div
+            id="estadoEntregado"
+            class="oculto"
+        >
+            <p>Tu pedido está listo para recoger.</p>
+        </div>
+
+        <button
+            type="button"
+            id="botonTicket"
+            class="boton-continuar oculto"
+            onclick="mostrarTicket()"
+        >
+            Ver ticket
+        </button>
+
+    </main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 6. TICKET -->
+<!-- ========================= -->
+
+<section
+    id="pantallaTicket"
+    class="pantalla oculto"
+>
+
+    <main class="ticket-final-container">
+
+        <div class="ticket-final">
+
+            <div class="ticket-logo">☕</div>
+
+            <h1>CecyCafetería</h1>
+
+            <div class="ticket-datos">
+
+                <div>
+                    <strong>Pedido:</strong>
+                    #<span id="numeroTicket">000</span>
+                </div>
+
+                <div>
+                    <strong>Fecha:</strong>
+                    <span id="fechaTicket"></span>
+                </div>
+
+                <div>
+                    <strong>Hora:</strong>
+                    <span id="horaTicket"></span>
+                </div>
+
+            </div>
+
+            <div
+                id="resumenTicket"
+                class="ticket-productos"
+            ></div>
+
+            <p class="ticket-total">
+                Total: $<span id="totalTicket">0</span>
+            </p>
+
+            <p class="estado-pago">Pago registrado</p>
+
+            <p class="ticket-gracias">
+                Gracias por comprar en CecyCafetería.
+            </p>
+
+            <button
+                type="button"
+                onclick="window.print()"
+            >
+                Imprimir ticket
+            </button>
+
+            <button
+                type="button"
+                onclick="finalizarPedido()"
+            >
+                Finalizar
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 7. MIS PEDIDOS -->
+<!-- ========================= -->
+
+<section
+    id="pantallaPedidos"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <button
+            type="button"
+            class="boton-volver"
+            onclick="mostrarPantalla('pantallaInicio')"
+        >
+            ← Volver
+        </button>
+
+        <h1>📋 Mis pedidos</h1>
+
+        <p>Consulta el estado de tus pedidos</p>
+
+    </header>
+
+    <main
+        id="listaPedidos"
+        class="lista-pedidos"
+    ></main>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 8. HISTORIAL -->
+<!-- ========================= -->
+
+<section
+    id="pantallaHistorial"
+    class="pantalla oculto"
+>
+
+    <header class="encabezado">
+
+        <button
+            type="button"
+            class="boton-volver"
+            onclick="mostrarPantalla('pantallaInicio')"
+        >
+            ← Volver
+        </button>
+
+        <h1>📜 Historial</h1>
+
+        <p>Revisa los detalles de tus pedidos anteriores</p>
+
+    </header>
+
+    <main
+        id="listaHistorial"
+        class="lista-pedidos"
+    ></main>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
